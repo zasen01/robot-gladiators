@@ -1,15 +1,34 @@
 //Prompts User to input robot name
 var playerName = window.prompt("What is you robot's name?");
-console.log(playerName);
-//Mesage to Yourself
-console.log("This logs a string, Good for leaving yourself a message");
-//Math
-console.log(10 +10);
-//Players Robots Name
-console.log("Our robots name is " + playerName);
+//Player Hp and Ap
+var playerHealth = 100;
+var playerAttack = 10;
 
-// This Creates a function name 'fight'
-//function fight()
-/*{
-    window.alert("The Fight has begun!");
-}*/
+//Logging player values
+console.log(playerName, playerAttack, playerHealth);
+
+//enemy set up
+var enemyName = "Robotron";
+var enemyHealth = 50;
+var enemyAttack = 12;
+
+//Arena Greeting
+
+var fight = function() {
+    //Game Start Alert
+    window.alert("Welcome to the Robot Gladiators!");
+    
+    //Subtrack 'playerAttack' from 'enemyHealth'
+        enemyHealth = enemyHealth - playerAttack;
+    
+    //Log message to console
+        console.log (playerName + " Attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " remaining.");
+    
+    //Subtract 'enemyAttack' from 'playerHealth'
+        playerHealth = playerHealth - enemyAttack;
+
+    //Log Message to console
+        console.log(enemyName + " Attacked " + playerName + ". " + playerName + " now has "+ playerHealth + " health remaining.");
+};
+//
+fight();
