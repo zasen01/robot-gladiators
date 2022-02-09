@@ -9,44 +9,14 @@ var playerMoney = 10;
 console.log(playerName, playerAttack, playerHealth);
 
 //enemy set up
-var enemyName = "Robotron";
+var enemyNames = ["Robotron", "Hey Arnold", "Robo Tum"];
 var enemyHealth = 50;
 var enemyAttack = 12;
-
 //Arena Greeting
 
-var fight = function() {
+var fight = function(enemyName) {
     //Game Start Alert
     window.alert("Welcome to the Robot Gladiators!");
-    
-    //Subtrack 'playerAttack' from 'enemyHealth'
-        enemyHealth = enemyHealth - playerAttack;
-    
-    //Log message to console
-        console.log (playerName + " Attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " remaining.");
-    //enemy health check
-        if (enemyHealth <= 0){
-            window.alert(enemyName + " has died!");
-        }
-        else {
-            window.alert(enemyName + " still has " + enemyHealth + " health left." );
-        }
-    
-    //Subtract 'enemyAttack' from 'playerHealth'
-        playerHealth = playerHealth - enemyAttack;
-    //player health check
-        if (playerHealth <= 0) {
-            window.alert(playerName + "has died!");
-        }
-        else {
-            window.alert(playerName + " still has " + playerHealth + " health left.");
-        }
-
-    //Log Message to console
-        console.log(enemyName + " Attacked " + playerName + ". " + playerName + " now has "+ playerHealth + " health remaining.");
-};
-
-fight();
 
 //Fight or Skip Prompt
 var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose. ");
@@ -88,4 +58,8 @@ var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? En
         else {
             window.alert("You need to choose a valid option. Try");
         }
+    };
 
+for(var i = 0; i < enemyNames.length; i++) {
+        fight(enemyNames[i]);
+    };
